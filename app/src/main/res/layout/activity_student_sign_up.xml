@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.nitish2027.alpranlibrarymanager.StudentSignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/sid"
+                android:id="@+id/sid"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/esid"
+                android:id="@+id/esid"
+                android:background="@drawable/et"
+                style="@style/et"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/fname"
+                android:id="@+id/fname"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/efname"
+                android:id="@+id/efname"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="textCapWords"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/lname"
+                android:id="@+id/lname"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/elname"
+                android:id="@+id/elname"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="textCapWords"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/pass"
+                android:id="@+id/pass"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/epass"
+                android:id="@+id/epass"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="textPassword"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/rpass"
+                android:id="@+id/rpass"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/repass"
+                android:id="@+id/repass"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="textPassword"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/gender"
+                android:id="@+id/gender"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/egender"
+                android:id="@+id/egender"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/dob"
+                android:id="@+id/dob"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/edob"
+                android:id="@+id/edob"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/sdmsnumber"
+                android:id="@+id/sdmsnumber"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/esdmsnumber"
+                android:id="@+id/esdmsnumber"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="number"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/placement"
+                android:id="@+id/placement"
+                style="@style/tv" />
+
+            <EditText
+                android:text="@string/eplacement"
+                android:id="@+id/eplacement"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/batch"
+                android:id="@+id/batch"
+                style="@style/tv" />
+
+            <EditText
+                android:text="@string/ebatch"
+                android:id="@+id/ebatch"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/ssc"
+                android:id="@+id/ssc"
+                style="@style/tv" />
+
+            <EditText
+                android:text="@string/essc"
+                android:id="@+id/essc"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:text="@string/address"
+                android:id="@+id/address"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/eaddress"
+                android:id="@+id/eaddress"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:layout_height="100dp"
+                android:inputType="text|textMultiLine|textCapSentences"
+                android:lines="5"
+                android:maxLength="130"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/pin"
+                android:id="@+id/pin"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/epin"
+                android:id="@+id/epin"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="number"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/aadhar"
+                android:id="@+id/aadhar"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/eaadhar"
+                android:id="@+id/eaadhar"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:inputType="number"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/mail"
+                android:id="@+id/mail"
+                style="@style/tv"
+                />
+
+            <EditText
+                android:text="@string/email"
+                android:id="@+id/email"
+                android:background="@drawable/et"
+                style="@style/et" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5">
+
+                <TextView
+                    android:text="@string/cnumber"
+                    android:id="@+id/cnumber"
+                    style="@style/tv"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5">
+
+                <EditText
+                    android:text="@string/e91"
+                    android:id="@+id/e91"
+                    android:background="@drawable/et"
+                    android:gravity="center"
+                    style="@style/et"
+                    android:layout_weight="2.5"
+                    android:focusable="false"
+                    />
+
+                <EditText
+                    android:text="@string/ecnumber"
+                    android:id="@+id/ecnumber"
+                    android:background="@drawable/et"
+                    style="@style/et"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/jrole"
+                android:id="@+id/jrole"
+                style="@style/tv" />
+
+            <EditText
+                android:text="@string/ejrole"
+                android:id="@+id/ejrole"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/education"
+                android:id="@+id/education"
+                style="@style/tv" />
+
+            <EditText
+                android:text="@string/edulevel"
+                android:id="@+id/edulevel"
+                android:background="@drawable/et"
+                style="@style/et"
+                android:gravity="center"
+                android:focusable="false"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+
+            <Button
+                android:text="@string/btnSignup"
+                android:background="@drawable/btn"
+                android:id="@+id/signup"
+                style="@style/btn"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

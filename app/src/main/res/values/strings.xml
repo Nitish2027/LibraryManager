@@ -3,4 +3,62 @@
     <string name="MainPageHeader">Alpran Software Private Limited</string>
     <string name="LibraryManagementSystem">LIBRARY MANAGEMENT SYSTEM</string>
     <string name="Welcome">Welcome</string>
+
+    <string name="sid">Student ID:</string>
+    <string name="esid"></string>
+
+    <string name="fname">First Name:</string>
+    <string name="efname"></string>
+
+    <string name="lname">Last Name:</string>
+    <string name="elname"></string>
+
+    <string name="pass">Password:</string>
+    <string name="epass"></string>
+
+    <string name="rpass">Re-Enter Password:</string>
+    <string name="repass"></string>
+
+    <string name="gender">Gender:</string>
+    <string name="egender">Select</string>
+
+    <string name="dob">Date Of Birth:</string>
+    <string name="edob">Select</string>
+
+    <string name="sdmsnumber">SDMS Number:</string>
+    <string name="esdmsnumber"></string>
+
+    <string name="placement">Placement Status:</string>
+    <string name="eplacement">Select</string>
+
+    <string name="batch">Batch:</string>
+    <string name="ebatch">Select</string>
+
+    <string name="ssc">Sector Skill Counsil:</string>
+    <string name="essc">Select</string>
+
+    <string name="address">Address:</string>
+    <string name="eaddress"></string>
+
+    <string name="pin">Pin Code:</string>
+    <string name="epin"></string>
+
+    <string name="aadhar">Aadhar Number:</string>
+    <string name="eaadhar"></string>
+
+    <string name="mail">Email ID:</string>
+    <string name="email"></string>
+
+    <string name="cnumber">Contact Number:</string>
+    <string name="e91">+91</string>
+    <string name="ecnumber"></string>
+
+    <string name="jrole">Job Role:</string>
+    <string name="ejrole">Select</string>
+
+    <string name="education">Education Level:</string>
+    <string name="edulevel">Select</string>
+
+    <string name="btnSignup">Sign Up</string>
+
 </resources>

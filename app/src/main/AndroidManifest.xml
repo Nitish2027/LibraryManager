@@ -29,7 +29,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmpActivity"></activity>
+        <activity android:name=".EmpActivity" />
+        <activity android:name=".StdActivity" />
+        <activity android:name=".StudentSignUpActivity"></activity>
     </application>
 
 </manifest>

@@ -54,7 +54,7 @@ public class EmpFragmentTab extends android.support.v4.app.Fragment implements V
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         // initialise your views
-        if(SharedPrefManager.getInstance(this.getActivity()).isLoggedIn()){
+        if(SharedPrefManager.getInstance(this.getActivity()).employeeIsLoggedIn()){
             getActivity().finish();
             startActivity(new Intent(this.getActivity(), EmpActivity.class));
             return;
@@ -85,7 +85,7 @@ public class EmpFragmentTab extends android.support.v4.app.Fragment implements V
 
     }
 
-    private void userLogin(){
+    private void employeeLogin(){
         final String str_username = etusername.getText().toString().trim();
         final String str_password = etpassword.getText().toString().trim();
 
@@ -93,7 +93,7 @@ public class EmpFragmentTab extends android.support.v4.app.Fragment implements V
 
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                Constants.URL_LOGIN,
+                Constants.EMPLOYEE_LOGIN,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -102,7 +102,7 @@ public class EmpFragmentTab extends android.support.v4.app.Fragment implements V
                             JSONObject obj = new JSONObject(response);
                             if(!obj.getBoolean("error")){
                                 SharedPrefManager.getInstance(getActivity().getApplicationContext())
-                                        .userLogin(
+                                        .employeeLogin(
                                                 obj.getInt("id"),
                                                 obj.getString("username"),
                                                 obj.getString("email")
@@ -155,7 +155,7 @@ public class EmpFragmentTab extends android.support.v4.app.Fragment implements V
     @Override
     public void onClick(View view) {
         if(view == btnlogin){
-            userLogin();
+            employeeLogin();
         }
     }
 }

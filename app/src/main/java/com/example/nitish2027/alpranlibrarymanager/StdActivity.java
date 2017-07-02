@@ -8,17 +8,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class EmpActivity extends AppCompatActivity {
+public class StdActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emp);
+        setContentView(R.layout.activity_std);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(!SharedPrefManager.getInstance(this).employeeIsLoggedIn()){
+        if(!SharedPrefManager.getInstance(this).studentIsLoggedIn()){
             finish();
             startActivity(new Intent(this,MainActivity.class));
         }
