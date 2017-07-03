@@ -35,10 +35,10 @@ public class StudentSignUpActivity extends AppCompatActivity {
 
     private DatePickerDialog fromDatePickerDialog;
     private SimpleDateFormat dateFormatter;
-    EditText etsid, etfname, etlname, etpass, etrepass, etgender, etdob, etsdmsnumber, etplacement, etbatch, etssc;
-    EditText etaddress, etpin, etaadhar, etemail, etcnumber, etjrole, etedulevel;
-    Button btnsignup;
-
+    private EditText etsid, etfname, etlname, etpass, etrepass, etgender, etdob, etsdmsnumber, etplacement, etbatch, etssc;
+    private EditText etaddress, etpin, etaadhar, etemail, etcnumber, etjrole, etedulevel;
+    private Button btnsignup;
+    private ProgressDialog progressDialog;
 
 
     String strsid, strfname, strlname, strpass, strrepass, strgender, strdob;
@@ -63,6 +63,8 @@ public class StudentSignUpActivity extends AppCompatActivity {
         etemail = (EditText) findViewById(R.id.email);
         etcnumber = (EditText) findViewById(R.id.ecnumber);
 
+        progressDialog = new ProgressDialog(this);
+
         //Validation
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,24 +73,97 @@ public class StudentSignUpActivity extends AppCompatActivity {
 
                 if(Valid) {
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(
-                            StudentSignUpActivity.this);
+                    final String str_sid = etsid.getText().toString().trim();
+                    final String str_fname = etfname.getText().toString().trim();
+                    final String str_lname = etlname.getText().toString().trim();
+                    final String str_pass = etpass.getText().toString().trim();
+                    final String str_gender = etgender.getText().toString().trim();
+                    final String str_dob = etdob.getText().toString().trim();
+                    final String str_sdmsnumber = etsdmsnumber.getText().toString().trim();
+                    final String str_placement = etplacement.getText().toString().trim();
+                    final String str_batch = etbatch.getText().toString().trim();
+                    final String str_ssc = etssc.getText().toString().trim();
+                    final String str_address = etaddress.getText().toString().trim();
+                    final String str_pin = etpin.getText().toString().trim();
+                    final String str_aadhar = etaadhar.getText().toString().trim();
+                    final String str_email = etemail.getText().toString().trim();
+                    final String str_cnumber = etcnumber.getText().toString().trim();
+                    final String str_jrole = etjrole.getText().toString().trim();
+                    final String str_edulevel = etedulevel.getText().toString().trim();
 
-                    builder.setMessage("You've Successfully Registered.");
-                    builder.setCancelable(false);
-                    builder.setPositiveButton("Okay",
-                            new DialogInterface.OnClickListener() {
+                    progressDialog.setMessage("Registering User..");
+                    progressDialog.show();
 
-                                public void onClick(DialogInterface dialog,
-                                                    int which) {
-                                    Intent i = new Intent(StudentSignUpActivity.this, MainActivity.class);
-                                    startActivity(i);
-                                    finish();
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                            Constants.STUDENT_REGISTER,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    progressDialog.dismiss();
+
+                                    try {
+                                        JSONObject jsonObject = new JSONObject(response);
+
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                                StudentSignUpActivity.this);
+
+                                        builder.setMessage(jsonObject.getString("message"));
+                                        builder.setCancelable(false);
+                                        builder.setPositiveButton("Okay",
+                                                new DialogInterface.OnClickListener() {
+
+                                                    public void onClick(DialogInterface dialog,
+                                                                        int which) {
+                                                        Intent i = new Intent(StudentSignUpActivity.this, MainActivity.class);
+                                                        startActivity(i);
+                                                        finish();
+                                                    }
+                                                });
+
+                                        AlertDialog alert = builder.create();
+                                        alert.show();
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-                            });
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    progressDialog.hide();
+                                    Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
 
-                    AlertDialog alert = builder.create();
-                    alert.show();
+                                }
+                            }){
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String,String> params = new HashMap<>();
+
+                            params.put("studentid",str_sid);
+                            params.put("fname",str_fname);
+                            params.put("lname",str_lname);
+                            params.put("pass",str_pass);
+                            params.put("gender",str_gender);
+                            params.put("dob",str_dob);
+                            params.put("sdms_number",str_sdmsnumber);
+                            params.put("placement_status",str_placement);
+                            params.put("batch",str_batch);
+                            params.put("ssc",str_ssc);
+                            params.put("address",str_address);
+                            params.put("pin_code",str_pin);
+                            params.put("aadhar_number",str_aadhar);
+                            params.put("email_id",str_email);
+                            params.put("contact_number",str_cnumber);
+                            params.put("job_role",str_jrole);
+                            params.put("education_level",str_edulevel);
+
+                            return params;
+                        }
+                    };
+
+                    RequestHandler.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
+
                 }
             }
         });
@@ -562,56 +637,6 @@ public class StudentSignUpActivity extends AppCompatActivity {
                 strssc.equals("yes") && straddress.equals("yes") && strpin.equals("yes") && straadhar.equals("yes") &&
                 stremail.equals("yes") && strcnumber.equals("yes") && strjrole.equals("yes") && stredulevel.equals("yes")) {
 
-            StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                    Constants.STUDENT_REGISTER,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-
-                                Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
-
-                        }
-                    }){
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String,String> params = new HashMap<>();
-
-                    params.put("studentid",str_sid);
-                    params.put("fname",str_fname);
-                    params.put("lname",str_lname);
-                    params.put("pass",str_pass);
-                    params.put("gender",str_gender);
-                    params.put("dob",str_dob);
-                    params.put("sdms_number",str_sdmsnumber);
-                    params.put("placement_status",str_placement);
-                    params.put("batch",str_batch);
-                    params.put("ssc",str_ssc);
-                    params.put("address",str_address);
-                    params.put("pin_code",str_pin);
-                    params.put("aadhar_number",str_aadhar);
-                    params.put("email_id",str_email);
-                    params.put("contact_number",str_cnumber);
-                    params.put("job_role",str_jrole);
-                    params.put("education_level",str_edulevel);
-
-                    return params;
-                }
-            };
-
-            RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
-
             return true;
         }
         else
@@ -626,6 +651,5 @@ public class StudentSignUpActivity extends AppCompatActivity {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
-
 
 }

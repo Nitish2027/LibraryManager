@@ -337,7 +337,8 @@
                 android:text="@string/email"
                 android:id="@+id/email"
                 android:background="@drawable/et"
-                style="@style/et" />
+                style="@style/et"
+                android:inputType="textEmailAddress"/>
 
         </LinearLayout>
 

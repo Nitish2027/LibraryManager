@@ -91,7 +91,7 @@
         <item name="android:padding" >10dp</item>
         <item name="android:inputType" >textCapWords</item>
         <item name="android:lines" >1</item>
-        <item name="android:maxLength" >20</item>
+        <item name="android:maxLength" >30</item>
     </style>
 
 </resources>
