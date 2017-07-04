@@ -1,5 +1,6 @@
 package com.example.nitish2027.alpranlibrarymanager;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +9,6 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.Fragment;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -36,7 +36,7 @@ public class StdFragmentTab extends android.support.v4.app.Fragment implements V
     private EditText etusername, etpassword;
     private Button btnlogin, btnsignup;
     private ProgressDialog progressDialog;
-    private CheckBox cbPassword;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class StdFragmentTab extends android.support.v4.app.Fragment implements V
         btnlogin.setOnClickListener(this);
         btnsignup.setOnClickListener(this);
 
-        cbPassword = (CheckBox) view.findViewById(R.id.cbPass);
+        CheckBox cbPassword = (CheckBox) view.findViewById(R.id.cbPass);
 
         cbPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -131,11 +131,15 @@ public class StdFragmentTab extends android.support.v4.app.Fragment implements V
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
 
-                        Toast.makeText(
-                                getActivity().getApplicationContext(),
-                                error.getMessage(),
-                                Toast.LENGTH_LONG
-                        ).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(
+                                getActivity());
+
+                        builder.setMessage(error.getMessage() + "! Server Not Working Properly. Try Again Later!");
+                        builder.setCancelable(false);
+                        builder.setPositiveButton("Okay",null);
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
 
                     }
                 }

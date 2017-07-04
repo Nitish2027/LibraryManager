@@ -5,17 +5,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 /**
- * Created by Nitish2027 on 7/1/2017.
+ * Created by Nitish2027 on 7/4/2017.
  */
 
-//Extending FragmentStatePagerAdapter
-public class MainTabListener extends FragmentStatePagerAdapter {
+public class SubTabListener extends FragmentStatePagerAdapter {
 
     //integer to count number of tabs
-    private int tabCount;
+    int tabCount;
 
     //Constructor to the class
-    public MainTabListener(FragmentManager fm, int tabCount) {
+    public SubTabListener(FragmentManager fm, int tabCount) {
         super(fm);
         //Initializing tab count
         this.tabCount= tabCount;
@@ -27,11 +26,14 @@ public class MainTabListener extends FragmentStatePagerAdapter {
         //Returning the current tabs
         switch (position) {
             case 0:
-                EmpFragmentTab tab1 = new EmpFragmentTab();
+                SubEmpFragmentTab tab1 = new SubEmpFragmentTab();
                 return tab1;
             case 1:
-                StdFragmentTab tab2 = new StdFragmentTab();
+                SubBooksFragmentTab tab2 = new SubBooksFragmentTab();
                 return tab2;
+            case 2:
+                SubStdFragmentTab tab3 = new SubStdFragmentTab();
+                return tab3;
             default:
                 return null;
         }

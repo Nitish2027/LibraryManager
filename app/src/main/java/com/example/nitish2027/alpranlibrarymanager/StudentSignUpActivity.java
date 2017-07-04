@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -37,7 +36,6 @@ public class StudentSignUpActivity extends AppCompatActivity {
     private SimpleDateFormat dateFormatter;
     private EditText etsid, etfname, etlname, etpass, etrepass, etgender, etdob, etsdmsnumber, etplacement, etbatch, etssc;
     private EditText etaddress, etpin, etaadhar, etemail, etcnumber, etjrole, etedulevel;
-    private Button btnsignup;
     private ProgressDialog progressDialog;
 
 
@@ -50,7 +48,7 @@ public class StudentSignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_sign_up);
 
-        btnsignup = (Button) findViewById(R.id.signup);
+        Button btnsignup = (Button) findViewById(R.id.signup);
         etsid = (EditText) findViewById(R.id.esid);
         etfname = (EditText) findViewById(R.id.efname);
         etlname = (EditText) findViewById(R.id.elname);
@@ -132,8 +130,16 @@ public class StudentSignUpActivity extends AppCompatActivity {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     progressDialog.hide();
-                                    Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
 
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(
+                                            StudentSignUpActivity.this);
+
+                                    builder.setMessage(error.getMessage() + "! Server Not Working Properly. Try Again Later!");
+                                    builder.setCancelable(false);
+                                    builder.setPositiveButton("Okay",null);
+
+                                    AlertDialog alert = builder.create();
+                                    alert.show();
                                 }
                             }){
                         @Override

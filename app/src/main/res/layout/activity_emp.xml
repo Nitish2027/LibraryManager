@@ -1,40 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/emp_layout"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.example.nitish2027.alpranlibrarymanager.EmpActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_main_header"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical"
+            android:minHeight="?attr/actionBarSize"
             android:background="@drawable/bg_main_header"
-            android:id="@+id/titleLayout">
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-            <TextView
-                android:text="@string/MainPageHeader"
-                style="@style/MainPageHeader"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:id="@+id/titleLayout">
 
-            <TextView
-                android:text="@string/LibraryManagementSystem"
-                style="@style/LibraryManagementSystem"/>
+                <TextView
+                    android:text="@string/MainPageHeader"
+                    style="@style/MainPageHeader"/>
 
-        </LinearLayout>
+                <TextView
+                    android:text="@string/LibraryManagementSystem"
+                    style="@style/LibraryManagementSystem"/>
 
-    </android.support.v7.widget.Toolbar>
+            </LinearLayout>
 
-</RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </android.support.design.widget.TabLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:background="@drawable/bg_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"/>
+</LinearLayout>
