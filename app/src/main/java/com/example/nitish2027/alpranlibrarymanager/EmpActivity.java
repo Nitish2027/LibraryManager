@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class EmpActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener{
 
@@ -17,6 +18,8 @@ public class EmpActivity extends AppCompatActivity implements TabLayout.OnTabSel
 
     //This is our viewPager
     private ViewPager viewPager;
+
+    private TextView empid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,9 @@ public class EmpActivity extends AppCompatActivity implements TabLayout.OnTabSel
             finish();
             startActivity(new Intent(this,MainActivity.class));
         }
+
+        empid = (TextView) findViewById(R.id.empid);
+        empid.setText(SharedPrefManager.getInstance(this).getEmpId());
 
         //Adding toolbar to the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

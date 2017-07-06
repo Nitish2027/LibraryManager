@@ -2,6 +2,7 @@
     <string name="app_name">Alpran Library Manager</string>
     <string name="MainPageHeader">Alpran Software Private Limited</string>
     <string name="LibraryManagementSystem">LIBRARY MANAGEMENT SYSTEM</string>
+    <string name="LibraryManager">Library Manager</string>
     <string name="Welcome">Welcome</string>
 
     <string name="sid">Student ID:</string>

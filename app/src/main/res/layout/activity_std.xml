@@ -21,16 +21,32 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical"
-            android:background="@drawable/bg_main_header"
             android:id="@+id/titleLayout">
 
             <TextView
-                android:text="@string/MainPageHeader"
-                style="@style/MainPageHeader"/>
+                android:text="@string/LibraryManager"
+                style="@style/LibraryManager"/>
 
-            <TextView
-                android:text="@string/LibraryManagementSystem"
-                style="@style/LibraryManagementSystem"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/Welcome"
+                    style="@style/text"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+                <TextView
+                    style="@style/text"
+                    android:layout_weight="1"
+                    android:id="@+id/studentid"
+                    android:gravity="left"/>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

@@ -7,8 +7,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class StdActivity extends AppCompatActivity {
+
+
+    private TextView studentid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,9 @@ public class StdActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this,MainActivity.class));
         }
+
+        studentid = (TextView) findViewById(R.id.studentid);
+        studentid.setText(SharedPrefManager.getInstance(this).getStudentId());
     }
 
     @Override
