@@ -2,8 +2,9 @@
     <string name="app_name">Alpran Library Manager</string>
     <string name="MainPageHeader">Alpran Software Private Limited</string>
     <string name="LibraryManagementSystem">LIBRARY MANAGEMENT SYSTEM</string>
-    <string name="LibraryManager">Library Manager</string>
+    <string name="LibraryManager"><u>Library Manager</u></string>
     <string name="Welcome">Welcome</string>
+    <string name="Hi">Hello!</string>
 
     <string name="sid">Student ID:</string>
     <string name="esid"></string>
@@ -61,5 +62,16 @@
     <string name="edulevel">Select</string>
 
     <string name="btnSignup">Sign Up</string>
+
+    <string name="studentinfo">Students Info</string>
+    <string name="studentshow">Show Students</string>
+
+    <string name="booksinfo">Books Info</string>
+    <string name="issuebooks">Issue Books</string>
+    <string name="searchbooks">Search Books</string>
+    <string name="returnbooks">Return Books</string>
+
+    <string name="employeeinfo">Employees Info</string>
+    <string name="employeeshow">Show Employees</string>
 
 </resources>

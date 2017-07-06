@@ -26,13 +26,13 @@ public class SubTabListener extends FragmentStatePagerAdapter {
         //Returning the current tabs
         switch (position) {
             case 0:
-                SubEmpFragmentTab tab1 = new SubEmpFragmentTab();
+                SubStdFragmentTab tab1 = new SubStdFragmentTab();
                 return tab1;
             case 1:
                 SubBooksFragmentTab tab2 = new SubBooksFragmentTab();
                 return tab2;
             case 2:
-                SubStdFragmentTab tab3 = new SubStdFragmentTab();
+                SubEmpFragmentTab tab3 = new SubEmpFragmentTab();
                 return tab3;
             default:
                 return null;

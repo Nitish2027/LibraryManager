@@ -38,19 +38,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:gravity="center">
 
                     <TextView
-                        android:text="@string/Welcome"
-                        style="@style/text"
-                        android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:text="@string/Hi"
+                        style="@style/text"/>
 
                     <TextView
                         style="@style/text"
-                        android:layout_weight="1"
-                        android:id="@+id/empid"
-                        android:gravity="left"/>
+                        android:id="@+id/empid"/>
 
 
                 </LinearLayout>

@@ -42,9 +42,9 @@ public class EmpActivity extends AppCompatActivity implements TabLayout.OnTabSel
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
         //Adding the tabs using addTab() method
-        tabLayout.addTab(tabLayout.newTab().setText("Employee"));
-        tabLayout.addTab(tabLayout.newTab().setText("Books"));
         tabLayout.addTab(tabLayout.newTab().setText("Student"));
+        tabLayout.addTab(tabLayout.newTab().setText("Books"));
+        tabLayout.addTab(tabLayout.newTab().setText("Employee"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //Initializing viewPager
