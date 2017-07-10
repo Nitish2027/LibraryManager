@@ -11,4 +11,5 @@ public class Constants {
     public static final String STUDENT_REGISTER = ROOT_URL + "registerStudent.php";
     public static final String EMPLOYEE_LOGIN = ROOT_URL + "empLogin.php";
     public static final String STUDENT_LOGIN = ROOT_URL + "stdLogin.php";
+    public static final String SHOW_STUDENTS = ROOT_URL + "showStudents.php";
 }

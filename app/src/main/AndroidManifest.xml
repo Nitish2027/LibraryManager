@@ -31,7 +31,9 @@
         </activity>
         <activity android:name=".EmpActivity" />
         <activity android:name=".StdActivity" />
-        <activity android:name=".StudentSignUpActivity"></activity>
+        <activity android:name=".StudentSignUpActivity" />
+        <activity android:name=".StudentInfo" />
+        <activity android:name=".StudentShow"></activity>
     </application>
 
 </manifest>
