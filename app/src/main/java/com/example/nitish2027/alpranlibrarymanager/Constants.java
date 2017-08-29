@@ -6,7 +6,7 @@ package com.example.nitish2027.alpranlibrarymanager;
 
 public class Constants {
 
-    private static final String ROOT_URL = "http://192.168.0.113/Android_Library_Manager/v1/";
+    private static final String ROOT_URL = "http://192.168.137.1/Android_Library_Manager/v1/";
 
     public static final String STUDENT_REGISTER = ROOT_URL + "registerStudent.php";
     public static final String EMPLOYEE_LOGIN = ROOT_URL + "empLogin.php";
